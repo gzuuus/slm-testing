@@ -17,7 +17,7 @@ Make sure you have [Ollama](https://ollama.com/) installed in your system, then:
 
 ```bash
 # Clone the repository
-git clone https://github.com/...
+git https://github.com/gzuuus/slm-testing
 
 # Navigate to the project directory
 cd sml-testing
@@ -99,18 +99,6 @@ go run . -patterns=language -configs=Ultra-Precise
 
 # Export results
 go run . -patterns=technical -export
-```
-
-## Project Structure
-
-```
-.
-├── main.go     # Application entry point
-├── flags.go    # Command-line flag definitions
-├── configs.go  # Configuration presets
-├── patterns.go # Test pattern definitions
-├── prompts.go  # Test prompts and categories
-└── utils.go    # Utility functions
 ```
 
 ## Contributing
