@@ -78,6 +78,16 @@ const (
 	// Game Theory
 	PromptGameStrategy PromptKey = "game_strategy"
 	PromptGameTheory   PromptKey = "game_theory"
+
+	PromptExpansion   PromptKey = "expansion"
+	PromptCompression PromptKey = "compression"
+	PromptConversion  PromptKey = "conversion"
+	PromptSeeker      PromptKey = "seeker"
+	PromptAction      PromptKey = "action"
+	PromptReasoning   PromptKey = "reasoning"
+
+	// Chain of thought
+	PromptCoT PromptKey = "cot"
 )
 
 var TestPrompts = map[PromptKey]string{
@@ -122,6 +132,40 @@ var TestPrompts = map[PromptKey]string{
 	PromptArtAnalysis:     `Analyze the use of perspective, light, and symbolism in Vermeer's "Girl with a Pearl Earring". How do these elements contribute to the painting's impact?`,
 	PromptGameStrategy:    `In a game of prisoner's dilemma repeated 100 times, what would be the optimal strategy? Consider both theoretical and practical aspects.`,
 	PromptGameTheory:      `Explain how Nash Equilibrium applies to market competition between two companies setting prices for similar products.`,
+	PromptExpansion:       `Write the first two paragraphs of a blog post explaining quantum computing to teenagers. The post should start with an engaging hook and use relatable examples from their daily lives. Begin with the title 'Quantum Computing: Your Phone's Future Superpower?'`,
+	PromptCompression: `Summarize the following passage into three key points while maintaining the core message:
+The Industrial Revolution, which took place from the 18th to 19th centuries, was a period of significant technological, socioeconomic, and cultural change. This transformation began in Great Britain and quickly spread throughout Western Europe and North America. The transition included going from manual production methods to machines, new chemical manufacturing and iron production processes, improved efficiency of water power, the increasing use of steam power, and the development of machine tools. It also included the change from wood and other biofuels to coal. The textile industry was the first to adopt such changes, as cotton spinning was mechanized. The Industrial Revolution marked a major turning point in human history, as almost every aspect of daily life was influenced in some way. It influenced the manufacture of new types of tools, the rise of the factory system, and important technological innovations in transportation and communication methods.`,
+	PromptConversion: `Convert the following natural language query into a proper SQL query. The database has tables for 'employees' (columns: employee_id, name, department, salary, hire_date) and 'departments' (columns: department_id, department_name, location):
+Show me all employees who work in the Marketing department and earn more than $60,000, ordered by their hire date with the most recent hires first`,
+	PromptSeeker: `Below are quarterly revenue figures for TechCorp in 2024:
+Q1: Revenue: $2.3M, Operating Costs: $1.8M
+Q2: Revenue: $2.8M, Operating Costs: $2.1M
+Q3: Revenue: $3.1M, Operating Costs: $2.4M
+Q4: Revenue: $2.9M, Operating Costs: $2.2M
+Which quarter had the highest profit margin (revenue minus operating costs divided by revenue)? Show your calculations.`,
+	PromptAction: `Given this user feedback for a mobile banking app:
+User 1: 'Takes forever to log in with fingerprint, often fails 3-4 times'
+User 2: 'Love the new bill pay feature but can't find it easily'
+User 3: 'App crashes when I try to view my statements'
+User 4: 'Great app overall but fingerprint login is frustrating'
+User 5: 'The menu structure is confusing, too many clicks to pay bills'
+Identify the top 3 issues that need immediate attention, prioritize them based on user impact and frequency, and provide specific technical recommendations to address each issue.`,
+	PromptReasoning: `A startup is deciding between two business models:
+Model A:
+- Subscription-based: $10/month
+- Customer acquisition cost: $20
+- Average customer lifetime: 8 months
+- Operating cost per customer: $5/month
+- Current market size: 100,000 potential customers
+- Market growth: 5% annually
+Model B:
+- One-time purchase: $100
+- Customer acquisition cost: $30
+- Operating cost per customer: $10 (one-time)
+- Current market size: 50,000 potential customers
+- Market growth: 15% annually
+Which business model should they choose? Provide your analysis and recommendation based on profitability, scalability, and long-term sustainability. Show your calculations and reasoning.`,
+	PromptCoT: `How many times does the letter 'r' appear in the word 'strawberry'?`,
 }
 
 // Get all prompts as a slice

@@ -102,7 +102,7 @@ func parseFlags() *Flags {
 	flag.BoolVar(&flags.ExportJSON, "export", false, "Export results to JSON file")
 	flag.BoolVar(&flags.PrintResults, "print", true, "Print results to console")
 	flag.StringVar(&flags.URL, "url", "http://localhost:11434", "LLM server URL")
-	flag.StringVar(&flags.Model, "model", "qwen2.5:0.5b-instruct", "Model name")
+	flag.StringVar(&flags.Model, "model", "deepseek-r1:1.5b", "Model name")
 	flag.StringVar(&flags.Patterns, "patterns", "", "Comma-separated list of test patterns")
 	flag.StringVar(&flags.Configs, "configs", "", "Comma-separated list of configurations")
 	flag.StringVar(&flags.Prompts, "prompts", "", "Comma-separated list of specific prompts")
